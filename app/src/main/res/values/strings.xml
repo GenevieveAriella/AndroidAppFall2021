@@ -14,7 +14,7 @@
     <string name="signOutButton">Sign Out Button</string>
 
     <!-- Pause Saving button-->
-    <string name="pauseSavingButton">Sign Out Button</string>
+    <string name="pauseSavingButton">Pause Saving Button</string>
 
     <!-- View Playlist button-->
     <string name="viewPlayistButton">View Playlist Button</string>
