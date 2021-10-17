@@ -1,4 +1,4 @@
 .idea/
-.gradle/
+.gradle/*
 .gradle/7.0.2/fileHashes/fileHashes.bin
 .gradle/7.0.2/fileHashes/fileHashes.lock
