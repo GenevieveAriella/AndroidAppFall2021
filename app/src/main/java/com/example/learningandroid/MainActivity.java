@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-    The purpose of this public method is to link our views/pages together
+    The purpose of this public method is to link the landing page to the menu page together
      **/
     public void signInButtonClick(View view){
         // Intent takes in 2 arguments, the context and the page you want to link to. In this case,
