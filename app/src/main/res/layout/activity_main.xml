@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4A4949"
+    android:foregroundTint="#4A4949"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="164dp"
         android:text="@string/homeTitle"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,13 +24,13 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/sign_in_button"
+        android:layout_width="158dp"
+        android:layout_height="67dp"
+        android:background="#9FEF34"
         android:onClick="signInButtonClick"
+        android:shadowColor="#090202"
         android:text="@string/signInSpotify"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
