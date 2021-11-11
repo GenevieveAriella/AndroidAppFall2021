@@ -17,7 +17,17 @@
     <string name="pauseSavingButton">Pause Saving Button</string>
 
     <!-- View Playlist button-->
-    <string name="viewPlayistButton">View Playlist Button</string>
+    <string name="viewPlaylistButton">View Playlist Button</string>
+
+    <string name="back">backButton</string>
+
+    <string name="exportAll">Export</string>
+    <string name="select_all">Select All</string>
+    <string name="unselect_all">Unselect All</string>
+    <string name="view_playlists">View Playlists</string>
+    <string name="cb1">Playlist 1</string>
+    <string name="cb2">Playlist 2</string>
+    <string name="cb3">Playlist 3</string>
 
 
 </resources>
