@@ -42,7 +42,7 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
     public static final String CLIENT_ID = "cc57ce3f4df445198f7f85f8d60c6d07";
-    private static final String REDIRECT_URI = "http://localhost:8888/callback";
+    private static final String REDIRECT_URI = "https://github.com/qle2";
     private static final int REQUEST_CODE = 1337;
     public static final int AUTH_TOKEN_REQUEST_CODE = 0x10;
     public static final int AUTH_CODE_REQUEST_CODE = 0x11;
