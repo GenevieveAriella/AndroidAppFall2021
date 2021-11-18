@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">LearningAndroid</string>
+
+    <!-- homeTitle  -->
+    <string name="homeTitle">Discoverly</string>
+
+    <!-- Sign in to Spotify button  -->
+    <string name="signInSpotify">Sign Into Spotify</string>
+
+    <!-- Start Saving button -->
+    <string name="startSavingButton">Start Saving</string>
+
+    <!-- Sign out button-->
+    <string name="signOutButton">Sign Out Button</string>
+
+    <!-- Pause Saving button-->
+    <string name="pauseSavingButton">Sign Out Button</string>
+
+    <!-- View Playlist button-->
+    <string name="viewPlayistButton">View Playlist Button</string>
+
+
+</resources>
