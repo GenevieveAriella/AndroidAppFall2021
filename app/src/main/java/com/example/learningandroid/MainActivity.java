@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import android.app.Activity;
@@ -41,84 +42,120 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String CLIENT_ID = "cc57ce3f4df445198f7f85f8d60c6d07";
-    private static final String REDIRECT_URI = "https://github.com/qle2";
+
+    private static final String TAG = "Spotify " + MainActivity.class.getSimpleName();
+
+    private static final String CLIENT_ID = "cc57ce3f4df445198f7f85f8d60c6d07";
+
+    private static final String REDIRECT_URL = "https://github.com/qle2";
+
     private static final int REQUEST_CODE = 1337;
-    public static final int AUTH_TOKEN_REQUEST_CODE = 0x10;
-    public static final int AUTH_CODE_REQUEST_CODE = 0x11;
 
-    private final OkHttpClient mOkHttpClient = new OkHttpClient();
-    private String mAccessToken;
-    private String mAccessCode;
-    private Call mCall;
+    public static final String AUTH_TOKEN = "AUTH_TOKEN";
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        getSupportActionBar().setTitle(String.format(
-                Locale.US, "Spotify Auth Sample %s", BuildConfig.LIB_VERSION_NAME));
+
+        Button mLoginButton = (Button)findViewById(R.id.signInButton);
+
+        mLoginButton.setOnClickListener(mListener);
+
     }
 
-    /**
-    The purpose of this public method is to link the landing page to the menu page together
-     **/
-    public void signInButtonClick(View view){
-        // Intent takes in 2 arguments, the context and the page you want to link to. In this case,
-        // I want to link to menuPage. Next step is to go to the sign in button and loads this method
-        // into the onCLick attribute
-        Intent intent = new Intent(this, menuPage.class);
-        startActivity(intent);
+    private void openLoginWindow() {
+
+        AuthorizationRequest.Builder builder = new AuthorizationRequest.Builder(CLIENT_ID, AuthorizationResponse.Type.TOKEN, REDIRECT_URL);
+
+        builder.setScopes(new String[]{ "streaming"});
+
+        AuthorizationRequest request = builder.build();
+
+        AuthorizationClient.openLoginActivity(this,REQUEST_CODE,request);
+
     }
 
-    private void cancelCall() {
-        if (mCall != null) {
-            mCall.cancel();
-        }
-    }
     @Override
-    protected void onDestroy() {
-        cancelCall();
-        super.onDestroy();
-    }
 
-    public void onGetUserProfileClicked(View view) {
-        if (mAccessToken == null) {
-            final Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_main), R.string.warning_need_token, Snackbar.LENGTH_SHORT);
-            snackbar.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
-            snackbar.show();
-            return;
+    protected void onActivityResult(int requestCode, final int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == REQUEST_CODE)
+
+        {
+
+            final AuthorizationResponse response = AuthorizationClient.getResponse(resultCode, data);
+
+            switch (response.getType()) {
+
+                // Response was successful and contains auth token
+
+                case TOKEN:
+
+                    Log.e(TAG,"Auth token: " + response.getAccessToken());
+
+                    Intent intent = new Intent(MainActivity.this,
+
+                            MainActivity.class);
+
+                    intent.putExtra(AUTH_TOKEN, response.getAccessToken());
+
+                    startActivity(intent);
+
+                    destroy();
+
+                    break;
+
+                // Auth flow returned an error
+
+                case ERROR:
+
+                    Log.e(TAG,"Auth error: " + response.getError());
+
+                    break;
+
+                // Most likely auth flow was cancelled
+
+                default:
+
+                    Log.d(TAG,"Auth result: " + response.getType());
+
+            }
+
         }
 
-        final Request request = new Request.Builder()
-                .url("https://api.spotify.com/v1/me")
-                .addHeader("Authorization","Bearer " + mAccessToken)
-                .build();
+    }
 
-        cancelCall();
-        mCall = mOkHttpClient.newCall(request);
 
-        mCall.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                setResponse("Failed to fetch data: " + e);
+    View.OnClickListener mListener = new View.OnClickListener(){
+
+        @Override
+
+        public void onClick(View view) {
+
+            switch (view.getId()){
+
+                case R.id.signInButton:
+
+                    openLoginWindow();
+
+                    break;
+
             }
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    final JSONObject jsonObject = new JSONObject(response.body().string());
-                    setResponse(jsonObject.toString(3));
-                } catch (JSONException e) {
-                    setResponse("Failed to parse data: " + e);
-                }
-            }
-        });
+        }
+
+    };
+
+    public void destroy(){
+
+        MainActivity.this.finish();
+
     }
-    private void setResponse(final String text) {
-        runOnUiThread(() -> {
-            final TextView responseView = findViewById(R.id.response_text_view);
-            responseView.setText(text);
-        });
-    }
+
 }
