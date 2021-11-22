@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="#D7CCC8"
     tools:context=".menuPage"
+    android:id="@+id/menu_page"
+
     >
 
     <TextView
