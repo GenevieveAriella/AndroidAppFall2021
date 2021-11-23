@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.iammert:ScalingLayout:1.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/03c424c5e9dfd61184c633c4bffb1496/transformed/jetified-ScalingLayout-1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/03c424c5e9dfd61184c633c4bffb1496/transformed/jetified-ScalingLayout-1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/03c424c5e9dfd61184c633c4bffb1496/transformed/jetified-ScalingLayout-1.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
