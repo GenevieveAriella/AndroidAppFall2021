@@ -44,3 +44,28 @@ public class MainActivity extends AppCompatActivity {
 //        makeText(getApplicationContext(),"Next Screen", LENGTH_SHORT).show();
 //    }
 }
+
+///new work for showing playlists
+public void getMyPlayList(){
+    Map<String, Object> options = new HashMap<>();
+    options.put(SpotifyService.LIMIT, 30);
+
+    spotifyService.getMyPlaylists(options, new SpotifyCallback<Pager<PlaylistSimple>>() {
+        @Override
+        public void failure(SpotifyError spotifyError) {
+            Log.d("SearchPager", spotifyError.toString());
+        }
+
+        @Override
+        public void success(Pager<PlaylistSimple> playlistSimplePager, Response response) {
+            List<PlaylistSimple> simples = playlistSimplePager.items;
+
+            for(PlaylistSimple simple : simples){
+                Log.d("SearchPager", simple.name);
+                Log.d("SearchPager", simple.images.get(1).url);
+            }
+
+        }
+    });
+}
+
