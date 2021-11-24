@@ -63,6 +63,7 @@ public void getMyPlayList(){
             for(PlaylistSimple simple : simples){
                 Log.d("SearchPager", simple.name);
                 Log.d("SearchPager", simple.images.get(1).url);
+                //
             }
 
         }
