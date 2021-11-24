@@ -4,33 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4A4949"
+    android:foregroundTint="#4A4949"
     tools:context=".MainActivity">
-
-
-    <Button
-        android:id="@+id/SignInButton"
-        android:layout_width="250dp"
-        android:layout_height="97dp"
-        android:layout_marginBottom="228dp"
-        android:text="Sign Into Spotify"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Discoverly"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/SignInButton"
+        android:layout_marginTop="164dp"
+        android:text="@string/homeTitle"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="158dp"
+        android:layout_height="67dp"
+        android:background="#9FEF34"
+        android:onClick="signInButtonClick"
+        android:shadowColor="#090202"
+        android:text="@string/signInSpotify"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.31" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
