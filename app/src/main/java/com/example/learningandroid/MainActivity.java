@@ -41,13 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        startActivity(intent);
+
         Button mLoginButton = (Button)findViewById(R.id.signInButton);
 
         mLoginButton.setOnClickListener(mListener);
-//        WebView webview = (WebView) findViewById(R.id.menu_page);
-//
-//        webview.getSettings().setJavaScriptEnabled(true);
-//        webview.getSettings().setDomStorageEnabled(true);
     }
 
     private void openLoginWindow() {
