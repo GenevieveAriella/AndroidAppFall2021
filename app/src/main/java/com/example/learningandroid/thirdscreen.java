@@ -13,6 +13,8 @@ public class thirdscreen extends AppCompatActivity {
     CheckBox cb1;
     CheckBox cb2;
     CheckBox cb3;
+    CheckBox cb4;
+    CheckBox cb5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,8 @@ public class thirdscreen extends AppCompatActivity {
         cb1 = findViewById(R.id.checkBox1);
         cb2 = findViewById(R.id.checkBox2);
         cb3 = findViewById(R.id.checkBox3);
+
+
     }
 
     public void unselectAll(View view) {
@@ -45,6 +49,7 @@ public class thirdscreen extends AppCompatActivity {
             cb3.setChecked(false);
         }
 
+
     }
 
     public void selectAll(View view) {
@@ -57,14 +62,15 @@ public class thirdscreen extends AppCompatActivity {
         if (cb3.isChecked() == false) {
             cb3.setChecked(true);
         }
+
     }
-/*    ViewGroup layout= (ViewGroup) findViewById(R.id.linearlayout);
+/*   ViewGroup layout= (ViewGroup) findViewById(R.id.linearlayout);
     public void switchToTrue(View v) {
         for (int i = 0; i < layout.getChildCount(); i++) {
             View w = layout.getChildAt(i);
-            if (v instanceof CheckBox) {
-                if (!((CheckBox) v).isChecked()) {
-                    ((CheckBox) v).setChecked(true);
+            if (w instanceof CheckBox) {
+                if (!((CheckBox) w).isChecked()) {
+                    ((CheckBox) w).setChecked(true);
                 }
             }
         }
