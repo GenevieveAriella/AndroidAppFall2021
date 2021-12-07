@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearningAndroid">
         <activity
-            android:name=".api_response"
-            android:exported="false" />
-        <activity
             android:name=".menuPage"
             android:exported="false" />
         <activity
