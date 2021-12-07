@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4A4949"
-    tools:context=".MainActivity"
-    android:id="@+id/activity_main"
-    >
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView2"
@@ -24,10 +21,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/signInButton"
+        android:id="@+id/button"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@drawable/sign_in_button"
+        android:onClick="signInButtonClick"
         android:text="@string/signInSpotify"
         android:textSize="20sp"
         android:textStyle="bold"
