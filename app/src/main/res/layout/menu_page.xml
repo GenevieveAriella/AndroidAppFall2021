@@ -4,17 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D7CCC8"
+    android:background="#4A4949"
     tools:context=".menuPage"
+    android:id="@+id/menu_page"
+
     >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="128dp"
         android:text="@string/homeTitle"
+        android:textColor="@color/white"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,48 +27,55 @@
         android:id="@+id/start_saving"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/start_saving_button"
+        android:background="#9FEF34"
         android:text="@string/startSavingButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424" />
 
     <Button
         android:id="@+id/pause_saving"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:background="#9FEF34"
         android:text="@string/pauseSavingButton"
-        android:background="@drawable/pause_saving_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start_saving" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872" />
 
     <Button
         android:id="@+id/view_playlist"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/viewPlayistButton"
-        android:background="@drawable/view_playlist_button"
+        android:background="#9FEF34"
+        android:onClick="viewThirdScreen"
+        android:text="@string/view_playlists"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pause_saving" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
 
     <Button
         android:id="@+id/signOut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/sign_out_button"
+        android:background="#9FEF34"
         android:onClick="signOutButtonClick"
         android:text="@string/signOutButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_playlist"
-        app:layout_constraintVertical_bias="0.282" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
 </androidx.constraintlayout.widget.ConstraintLayout>
