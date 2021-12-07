@@ -9,6 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
+
+
+import com.spotify.sdk.android.auth.AuthorizationResponse;
+import com.spotify.sdk.android.auth.AuthorizationRequest;
+import com.spotify.sdk.android.auth.AuthorizationClient;
+
 public class MainActivity extends AppCompatActivity {
 
 
