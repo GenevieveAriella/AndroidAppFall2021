@@ -31,6 +31,8 @@
     <string name="cb4">Playlist 4</string>
     <string name="cb5">Playlist 5</string>
     <string name="playlist6">Playlist6</string>
+    <string name="view_previous_sessions">View previous sessions</string>
+    <string name="todo">TODO</string>
 
 
 </resources>

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4A4949"
-    tools:context=".menuPage"
-    >
+    tools:context=".menuPage">
 
     <TextView
         android:id="@+id/textView2"
@@ -75,4 +74,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.6" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="PreviousSessions"
+        android:text="@string/view_previous_sessions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/presence_away"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:contentDescription="@string/todo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
