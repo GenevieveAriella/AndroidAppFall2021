@@ -34,7 +34,7 @@ public class menuPage extends AppCompatActivity {
     }
 
     public void PreviousSessions(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, thirdscreen.class);
         startActivity(intent);
 
     }
