@@ -32,7 +32,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:layout_width="150dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -44,7 +44,19 @@
             app:layout_constraintVertical_bias="0.9" />
 
         <Button
-            android:layout_width="150dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="175dp"
+            android:layout_marginBottom="100dp"
+            android:background="#9FEF34"
+            android:onClick="hideAll"
+            android:text="Delete All"
+            app:layout_constraintVertical_bias="0.9" />
+
+        <Button
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
