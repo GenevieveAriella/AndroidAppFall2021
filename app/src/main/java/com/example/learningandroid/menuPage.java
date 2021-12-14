@@ -32,4 +32,5 @@ public class menuPage extends AppCompatActivity {
         Intent intent = new Intent(this, thirdscreen.class);
         startActivity(intent);
     }
+
     }
